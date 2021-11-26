@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "903188902077",
+    "project_id": "academicapp-884a6",
+    "storage_bucket": "academicapp-884a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903188902077:android:f918a12a9b5a4e057407d4",
+        "android_client_info": {
+          "package_name": "com.sysirohub.academicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903188902077-9oofenhcj80k4v1ac8atsbl2cks9s7fh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sysirohub.academicapp",
+            "certificate_hash": "80eac7dbe9fac42743d26b6378f93ec815e23a8d"
+          }
+        },
+        {
+          "client_id": "903188902077-6k4ce944l9lds11f7ruhr3h9uqq4vn5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJkTekZOe6sxXjj06O5PUJK2rOqeXlvGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903188902077-6k4ce944l9lds11f7ruhr3h9uqq4vn5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

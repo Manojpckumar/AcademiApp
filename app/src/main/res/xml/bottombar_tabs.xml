@@ -1,0 +1,14 @@
+<tabs>
+    <tab
+        id="@+id/tab_favorites"
+        icon="@drawable/ic_baseline_dashboard_24"
+        title="Dashboard" />
+    <tab
+        id="@+id/tab_nearby"
+        icon="@drawable/ic_baseline_notifications_24"
+        title="Notification" />
+    <tab
+        id="@+id/tabSignOut"
+        icon="@drawable/ic_baseline_power_settings_new_24"
+        title="Signout" />
+</tabs>
