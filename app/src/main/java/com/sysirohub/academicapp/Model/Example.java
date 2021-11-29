@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Example {
 
+
     @SerializedName("ResponseCode")
     @Expose
     private String responseCode;
@@ -17,6 +18,18 @@ public class Example {
     @SerializedName("ResultData")
     @Expose
     private ResultData resultData;
+
+    @SerializedName("users")
+    @Expose
+    private Users users;
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
 
     public String getResponseCode() {
         return responseCode;

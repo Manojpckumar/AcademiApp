@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sysirohub.academicapp.R;
+import com.sysirohub.academicapp.databinding.FragmentAdminBinding;
+import com.sysirohub.academicapp.databinding.FragmentParentStudentBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +18,8 @@ import com.sysirohub.academicapp.R;
  * create an instance of this fragment.
  */
 public class ParentStudentFragment extends Fragment {
+
+    FragmentParentStudentBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +65,9 @@ public class ParentStudentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_parent_student, container, false);
+
+        binding = FragmentParentStudentBinding.inflate(inflater,container,false);
+
+        return binding.getRoot();
     }
 }

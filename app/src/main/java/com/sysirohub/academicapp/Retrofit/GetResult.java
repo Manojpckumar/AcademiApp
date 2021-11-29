@@ -1,6 +1,7 @@
 package com.sysirohub.academicapp.Retrofit;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 
@@ -26,6 +27,7 @@ public class GetResult {
                 @Override
                 public void onFailure(Call<JsonObject> call, Throwable t) {
                     myListener.callback(null, res);
+//                    Log.d("failed000",res);
                     call.cancel();
                     t.printStackTrace();
                 }

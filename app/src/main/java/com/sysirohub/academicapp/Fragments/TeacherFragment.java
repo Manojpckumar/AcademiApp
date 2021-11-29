@@ -1,5 +1,6 @@
 package com.sysirohub.academicapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,13 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sysirohub.academicapp.AllClasses;
+import com.sysirohub.academicapp.AttendanceView;
 import com.sysirohub.academicapp.R;
+import com.sysirohub.academicapp.databinding.FragmentParentStudentBinding;
+import com.sysirohub.academicapp.databinding.FragmentTeacherBinding;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link TeacherFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class TeacherFragment extends Fragment {
+
+    FragmentTeacherBinding binding;
+    String teacherName;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +36,10 @@ public class TeacherFragment extends Fragment {
 
     public TeacherFragment() {
         // Required empty public constructor
+    }
+
+    public TeacherFragment(String name) {
+        this.teacherName = name;
     }
 
     /**
@@ -60,8 +73,20 @@ public class TeacherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_teacher, container, false);
+        binding = FragmentTeacherBinding.inflate(inflater,container,false);
 
-        return view;
+        binding.tvTeacherName.setText(teacherName);
+
+        binding.llAllClasses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), AllClasses.class);
+                startActivity(intent);
+
+            }
+        });
+
+        return binding.getRoot();
     }
 }

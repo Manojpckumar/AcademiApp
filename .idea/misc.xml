@@ -3,18 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/absent_round_shape.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/back_flat_card.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/back_rounded_card.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/button_back.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/cursor_color.xml" value="0.2703125" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/full_blue_rounded.xml" value="0.2703125" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/half_blue_roundshape.xml" value="0.2703125" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/home_top_card.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/input_back.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/round_shape.xml" value="0.2703125" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/rounded_card.xml" value="0.2703125" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/drawable/small_cicle.xml" value="0.2703125" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_class.xml" value="0.24592391304347827" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_students.xml" value="0.24010416666666667" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_subject.xml" value="0.24139492753623187" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_classes.xml" value="0.24592391304347827" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_students.xml" value="0.24139492753623187" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_subjects.xml" value="0.24139492753623187" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_teachers.xml" value="0.2368659420289855" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_attendance_view.xml" value="0.24592391304347827" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_registration.xml" value="0.264" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/attendance_card.xml" value="0.24592391304347827" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/bottombar_tabs.xml" value="0.25416666666666665" />
-        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_admin.xml" value="0.2" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/class_card.xml" value="0.264" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_admin.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_parent_student.xml" value="0.25416666666666665" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_teacher.xml" value="0.176" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/teacher_assign_bottom_dialogue.xml" value="0.2368659420289855" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/xml/bottombar_tabs.xml" value="0.25416666666666665" />
       </map>
     </option>

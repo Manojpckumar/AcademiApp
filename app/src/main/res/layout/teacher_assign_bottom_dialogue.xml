@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/bottomSheet"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="350dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="20sp"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:background="@color/third"
+            android:textColor="@color/white"
+            android:text="Assign Teachers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sysirohub.academicapp.CustomViews.CustomTextView
+            android:layout_marginTop="20dp"
+            android:text="Select class"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_back"
+            android:layout_width="match_parent"
+            android:id="@+id/spnAllClassDetails"
+            android:layout_height="55dp"/>
+
+        <com.sysirohub.academicapp.CustomViews.CustomTextView
+            android:layout_marginTop="20dp"
+            android:text="Select subject"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_back"
+            android:layout_width="match_parent"
+            android:id="@+id/spnAllSubjectDetails"
+            android:layout_height="55dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:id="@+id/btnAssignTeacher"
+            android:background="@color/primary"
+            android:text="Assign"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

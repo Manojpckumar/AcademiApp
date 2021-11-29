@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:padding="10dp"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,272 +8,331 @@
     tools:context="com.sysirohub.academicapp.Fragments.AdminFragment">
 
 
-    <LinearLayout
-        android:orientation="vertical"
+    <FrameLayout
+        android:layout_marginBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.sysirohub.academicapp.CustomViews.CustomTextView
-            android:layout_marginTop="15dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:text="Welcome..."
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-       <LinearLayout
-           android:orientation="horizontal"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
-
-           <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-               android:layout_gravity="center"
-               android:textColor="@color/black"
-               android:layout_weight="1"
-               android:textStyle="bold"
-               android:textSize="20sp"
-               android:text="Admin name here"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"/>
-
-           <ImageView
-               android:src="@drawable/ic_admin"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"/>
-
-       </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="15dp"
-        android:weightSum="3"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
 
         <LinearLayout
-            android:layout_weight="1"
-            android:gravity="center"
+            android:background="@color/secondary"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="150dp">
 
-            <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-                android:textColor="@color/black"
-                android:layout_weight="1"
+            <com.sysirohub.academicapp.CustomViews.CustomTextView
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
-                android:textSize="30sp"
-                android:text="15"
-                android:layout_width="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="16sp"
+                android:text="Welcome..."
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:id="@+id/tvAdminName"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="Admin name here"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@drawable/ic_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_weight="1"
-            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/back_rounded_card"
+            android:layout_marginTop="100dp"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:text="15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="All Teachers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:text="15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="All Teachers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:text="15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="All Teachers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:text="General Options"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-                android:textColor="@color/black"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:text="15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
 
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llTeachers"
+                android:gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/back_flat_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-            <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-                android:textColor="@color/black"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:text="15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:text="Teacher's Management"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
+            </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llStudents"
+                android:gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/back_flat_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
 
+                <ImageView
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:text="Student Management"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
+                <ImageView
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
+            </LinearLayout>
 
-    <LinearLayout
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/llClass"
+                android:gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/back_flat_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/rounded_card"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp">
+                <ImageView
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/ic_admin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:text="Class Management"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
+            </LinearLayout>
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llSubjects"
+                android:gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/back_flat_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
 
-        <androidx.legacy.widget.Space
-            android:layout_width="10dp"
-            android:layout_height="match_parent"/>
+                <ImageView
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/rounded_card"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp">
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:text="Subject Management"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/ic_admin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <ImageView
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/llAttendance"
+                android:gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/back_flat_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
 
-        </LinearLayout>
+                <ImageView
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:text="Attendance Management"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-    <androidx.legacy.widget.Space
-        android:layout_width="match_parent"
-        android:layout_height="15dp"/>
+                <ImageView
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-    <LinearLayout
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/rounded_card"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp">
-
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/ic_admin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-        </LinearLayout>
-
-        <androidx.legacy.widget.Space
-            android:layout_width="10dp"
-            android:layout_height="match_parent"/>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:gravity="center_vertical"
-            android:background="@drawable/rounded_card"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp">
-
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/ic_admin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:textSize="18sp"
-                android:text="All Teachers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            </LinearLayout>
 
 
         </LinearLayout>
 
-    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
 
 </LinearLayout>

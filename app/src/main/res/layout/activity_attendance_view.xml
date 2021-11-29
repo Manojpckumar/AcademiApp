@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttendanceView">
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="Class"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spnClass"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:entries="@array/classes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:alpha=".5"
+            android:background="@color/black"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="Subject"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spnSubject"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:entries="@array/subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:alpha=".5"
+            android:background="@color/black"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="Class"
+                android:layout_height="wrap_content"/>
+
+            <com.sysirohub.academicapp.CustomViews.CustomTextView
+                android:id="@+id/tvDate"
+                android:gravity="center"
+                android:text="24/07/2021"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvAttendanceView"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

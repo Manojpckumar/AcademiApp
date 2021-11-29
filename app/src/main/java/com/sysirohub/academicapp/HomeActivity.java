@@ -24,6 +24,7 @@ import com.sysirohub.academicapp.Interface.OnFragmentInteractionListener;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
+import com.sysirohub.academicapp.Model.Common;
 import com.sysirohub.academicapp.Model.Example;
 import com.sysirohub.academicapp.Model.ResponseCommon;
 import com.sysirohub.academicapp.Retrofit.APIClient;
@@ -70,6 +71,7 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
 
                 if (tabId == R.id.tabSignOut) {
                     auth.signOut();
+                    Common.setDefault();
                     startActivity(new Intent(HomeActivity.this, MainActivity.class));
                     finish();
                 }
@@ -85,7 +87,6 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
                 }
             }
         });
-
 
     }
 
@@ -136,15 +137,23 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
 
             if(accountType.equalsIgnoreCase("Admin"))
             {
-                loadFragment(new AdminFragment());
+                Common.userRole = example.getResultData().getUserDetails().getRole();
+                Common.adminID = example.getResultData().getUserDetails().getId();
+
+                String name = example.getResultData().getUserDetails().getName();
+                loadFragment(new AdminFragment(name));
 
             }else if(accountType.equalsIgnoreCase("Teacher"))
             {
-                loadFragment(new TeacherFragment());
+                Common.userRole = example.getResultData().getUserDetails().getRole();
+                Common.teacherID = example.getResultData().getUserDetails().getId();
+
+                String name = example.getResultData().getUserDetails().getName();
+                loadFragment(new TeacherFragment(name));
             }
             else
             {
-                Toast.makeText(HomeActivity.this, "Student", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, "Student", Toast.LENGTH_SHORT).show();
             }
 
 

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llClassCard"
+    android:padding="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivIcon"
+                android:src="@drawable/ic_baseline_grade_24"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                android:text="Amar Nath"
+                android:id="@+id/tvClassName"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+                android:text="ID : 005236"
+                android:id="@+id/tvDivName"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tvStatus"
+                android:visibility="gone"
+                android:text="approve"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/present_round_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAssign"
+                android:layout_marginTop="10dp"
+                android:text="Assign"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:background="@drawable/present_round_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:alpha=".5"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

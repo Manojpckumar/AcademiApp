@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements GetResult.MyListe
         try {
 
             jsonObject.put("username", email);
-            jsonObject.put("password", email);
+            jsonObject.put("password", password);
 
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().userLogin((JsonObject) jsonParser.parse(jsonObject.toString()));
@@ -139,16 +139,25 @@ public class MainActivity extends AppCompatActivity implements GetResult.MyListe
 
             Example example = gson.fromJson(result.toString(), Example.class);
 
-            String status = example.getResultData().getUserDetails().getStatus();
+            if(example.getResult().equalsIgnoreCase("true"))
+            {
+                String status = example.getUsers().getStatus();
 
-            if(status.equalsIgnoreCase("1"))
-            {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }else
-            {
-                Toast.makeText(MainActivity.this, "Account inactive please wait for approval", Toast.LENGTH_SHORT).show();
+                if(status.equalsIgnoreCase("1"))
+                {
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                }else
+                {
+                    Toast.makeText(MainActivity.this, "Account inactive please wait for approval", Toast.LENGTH_SHORT).show();
+                }
             }
+            else
+            {
+                Toast.makeText(MainActivity.this, example.getResponseMsg(), Toast.LENGTH_SHORT).show();
+            }
+
+
         }
 
     }

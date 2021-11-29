@@ -16,7 +16,6 @@
         <com.sysirohub.academicapp.CustomViews.CustomTextView
             android:layout_marginTop="15dp"
             android:textColor="@color/black"
-            android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:textStyle="bold"
             android:gravity="center"
@@ -26,13 +25,13 @@
             android:layout_height="wrap_content"/>
 
         <LinearLayout
-            android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                android:id="@+id/tvTeacherName"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:layout_weight="1"
@@ -162,6 +161,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/llAllClasses"
                 android:layout_weight="1"
                 android:padding="10dp"
                 android:gravity="center_vertical"
@@ -181,7 +181,7 @@
                     android:layout_gravity="center"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:text="All Teachers"
+                    android:text="All Classes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -193,6 +193,7 @@
                 android:layout_height="match_parent"/>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_weight="1"
                 android:padding="10dp"
                 android:gravity="center_vertical"
@@ -226,6 +227,7 @@
             android:layout_height="15dp"/>
 
         <LinearLayout
+            android:visibility="gone"
             android:weightSum="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

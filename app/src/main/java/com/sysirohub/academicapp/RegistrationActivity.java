@@ -88,25 +88,7 @@ public class RegistrationActivity extends AppCompatActivity implements GetResult
                 //binding.progressBar.setVisibility(View.VISIBLE);
                 custPrograssbar.progressCreate(RegistrationActivity.this);
 
-                auth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(RegistrationActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-                                binding.progressBar.setVisibility(View.GONE);
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(RegistrationActivity.this, "Authentication failed." + task.getException(),
-                                            Toast.LENGTH_SHORT).show();
-                                } else {
-//                                    startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
-//                                    finish();
-                                    registerUserToApi(email,name,password,mobile,accountType);
-                                }
-                            }
-                        });
+                registerUserToApi(email,name,password,mobile,accountType);
             }
         });
 
@@ -114,6 +96,7 @@ public class RegistrationActivity extends AppCompatActivity implements GetResult
     }
 
     private void registerUserToApi(String email, String name, String password, String mobile, String accountType) {
+
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -125,10 +108,16 @@ public class RegistrationActivity extends AppCompatActivity implements GetResult
             if(accountType.equalsIgnoreCase("Teacher"))
             {
                 jsonObject.put("status", "0");
-            }else
+
+            }
+            else if(accountType.equalsIgnoreCase("Parent"))
             {
                 jsonObject.put("status", "1");
+
             }
+            jsonObject.put("class_id", "0");
+            jsonObject.put("dob", "0000-00-00");
+            jsonObject.put("doj", "0000-00-00");
             jsonObject.put("password", password);
 
             JsonParser jsonParser = new JsonParser();
@@ -153,14 +142,46 @@ public class RegistrationActivity extends AppCompatActivity implements GetResult
 
         if(callNo.equalsIgnoreCase("register")){
             Gson gson = new Gson();
+
             ResponseCommon response = gson.fromJson(result.toString(), ResponseCommon.class);
 
-            custPrograssbar.close();
+            if(response.getResult().equalsIgnoreCase("true"))
+            {
+                String name = binding.edName.getText().toString().trim();
+                String email = binding.edtMail.getText().toString().trim();
+                String password = binding.edtPassword.getText().toString().trim();
+                String mobile = binding.edtMobile.getText().toString().trim();
+                String accountType = binding.spnAccountType.getSelectedItem().toString();
 
-            Toast.makeText(this, response.getResponseMsg(), Toast.LENGTH_SHORT).show();
+                auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Toast.makeText(RegistrationActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                binding.progressBar.setVisibility(View.GONE);
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                if (!task.isSuccessful()) {
+                                    custPrograssbar.close();
+                                    Toast.makeText(RegistrationActivity.this, "Authentication failed." + task.getException(),
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
 
-            Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
-            startActivity(intent);
+                                    custPrograssbar.close();
+                                    Toast.makeText(RegistrationActivity.this, response.getResponseMsg(), Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(RegistrationActivity.this,HomeActivity.class);
+                                    startActivity(intent);
+
+                                }
+                            }
+                        });
+            }
+            else
+            {
+                custPrograssbar.close();
+                Toast.makeText(RegistrationActivity.this, response.getResponseMsg(), Toast.LENGTH_SHORT).show();
+            }
 
         }
 

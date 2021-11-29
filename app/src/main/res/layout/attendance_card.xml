@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:padding="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent">
+
+           <ImageView
+               android:src="@drawable/ic_baseline_supervised_user_circle_24"
+               android:layout_width="40dp"
+               android:layout_height="match_parent"/>
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_weight="1"
+           android:paddingLeft="10dp"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+               android:text="Amar Nath"
+               android:textStyle="bold"
+               android:textSize="20sp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+           <com.sysirohub.academicapp.CustomViews.CustomSubHeading
+               android:text="ID : 005236"
+               android:textSize="20sp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent">
+
+           <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+               android:background="@drawable/absent_round_shape"
+               android:layout_width="50dp"
+               android:textSize="20sp"
+               android:textColor="@color/white"
+               android:text="A"
+               android:gravity="center"
+               android:layout_gravity="center"
+               android:layout_height="50dp"/>
+
+       </LinearLayout>
+
+   </LinearLayout>
+
+
+    <View
+        android:alpha=".5"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

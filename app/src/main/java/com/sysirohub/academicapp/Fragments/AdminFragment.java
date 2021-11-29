@@ -1,5 +1,6 @@
 package com.sysirohub.academicapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sysirohub.academicapp.AllClasses;
+import com.sysirohub.academicapp.AllStudents;
+import com.sysirohub.academicapp.AllSubjects;
+import com.sysirohub.academicapp.AllTeachers;
+import com.sysirohub.academicapp.AttendanceView;
 import com.sysirohub.academicapp.R;
+import com.sysirohub.academicapp.databinding.FragmentAdminBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +23,9 @@ import com.sysirohub.academicapp.R;
  * create an instance of this fragment.
  */
 public class AdminFragment extends Fragment {
+
+    FragmentAdminBinding binding;
+    String adminName;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +38,10 @@ public class AdminFragment extends Fragment {
 
     public AdminFragment() {
         // Required empty public constructor
+    }
+
+    public AdminFragment(String name) {
+        this.adminName = name;
     }
 
     /**
@@ -60,11 +74,64 @@ public class AdminFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_admin, container, false);
 
-        return view;
+        binding = FragmentAdminBinding.inflate(inflater,container,false);
+
+        binding.tvAdminName.setText(adminName);
+
+        binding.llAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(),AttendanceView.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.llClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), AllClasses.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.llStudents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), AllStudents.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.llSubjects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), AllSubjects.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.llTeachers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), AllTeachers.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
+        return binding.getRoot();
     }
-
 
 }
