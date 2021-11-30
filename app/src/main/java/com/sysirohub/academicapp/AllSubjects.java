@@ -72,7 +72,8 @@ public class AllSubjects extends AppCompatActivity implements GetResult.MyListen
             binding.spnAllSubjects.setVisibility(View.GONE);
             binding.fabAddSubject.setVisibility(View.GONE);
 
-            getSubjectsToTeacher(Common.teacherClassId);
+            String tId =  Common.teacherID;
+            getSubjectsToTeacher(Common.teacherClassId,tId);
 
         }
 
@@ -106,17 +107,18 @@ public class AllSubjects extends AppCompatActivity implements GetResult.MyListen
 
     }
 
-    private void getSubjectsToTeacher(String teacherClassId) {
+    private void getSubjectsToTeacher(String classId, String teacherId) {
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("class_id", teacherClassId);
+            jsonObject.put("class_id", classId);
+            jsonObject.put("teacher_id", teacherId);
 
             JsonParser jsonParser = new JsonParser();
-            Call<JsonObject> call = APIClient.getInterface().getAssignedSubjectsByClass((JsonObject) jsonParser.parse(jsonObject.toString()));
+            Call<JsonObject> call = APIClient.getInterface().getSubjectsByClassTeacher((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();
             getResult.setMyListener(this);
-            getResult.onNCHandle(call, "getAssignedClassbysub");
+            getResult.onNCHandle(call, "getAssignedClassbysubT");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -224,7 +226,7 @@ public class AllSubjects extends AppCompatActivity implements GetResult.MyListen
             }
 
         }
-        else if (callNo.equalsIgnoreCase("getAssignedClassbysub")) {
+        else if (callNo.equalsIgnoreCase("getAssignedClassbysubT")) {
 
             Gson gson = new Gson();
 

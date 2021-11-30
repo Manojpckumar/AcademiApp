@@ -57,6 +57,9 @@ public interface Api {
     @POST(APIClient.APPEND_URL + "getAttendanceModule")
     Call<JsonObject> getTimeTable(@Body JsonObject object);
 
+    @POST(APIClient.APPEND_URL + "getAssignedClassbysubT")
+    Call<JsonObject> getSubjectsByClassTeacher(@Body JsonObject object);
+
 
 
 }
