@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <LinearLayout
             android:background="@color/secondary"
             android:orientation="vertical"
@@ -326,6 +325,35 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/llTimeTable"
+                android:gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/back_flat_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:src="@drawable/ic_baseline_supervised_user_circle_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+                    android:text="Time Table Management"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

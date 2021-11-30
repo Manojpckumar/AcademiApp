@@ -42,9 +42,21 @@ public interface Api {
     @POST(APIClient.APPEND_URL + "getAssignedClass")
     Call<JsonObject> getAssignedClasses(@Body JsonObject object);
 
-
     @POST(APIClient.APPEND_URL + "getAssignedClassbysub")
     Call<JsonObject> getAssignedSubjectsByClass(@Body JsonObject object);
+
+    @POST(APIClient.APPEND_URL + "getActiveWeekdays")
+    Call<JsonObject> getWeekDays(@Body JsonObject object);
+
+    @POST(APIClient.APPEND_URL + "AddTimetable")
+    Call<JsonObject> AddTimetable(@Body JsonObject object);
+
+    @POST(APIClient.APPEND_URL + "TeacherApproval")
+    Call<JsonObject> updateTeacherStatus(@Body JsonObject object);
+
+    @POST(APIClient.APPEND_URL + "getAttendanceModule")
+    Call<JsonObject> getTimeTable(@Body JsonObject object);
+
 
 
 }

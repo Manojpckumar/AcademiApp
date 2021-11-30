@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/liteash"
+    android:layout_height="match_parent"
+    tools:context=".AllTimeTable">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:background="@color/third"
+            android:textColor="@color/white"
+            android:text="Time Table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:layout_width="match_parent"
+        android:id="@+id/spnAllClasses"
+        android:layout_height="55dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llTimes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="TIME"
+                    android:background="@color/third"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="09:30-10:30"
+                    android:background="@color/third"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="10:30-11:30"
+                    android:background="@color/third"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="X"
+                    android:maxLines="1"
+                    android:background="@color/primary"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"/>
+
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="11:45-12:45"
+                    android:background="@color/third"
+                    android:layout_width="85dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="X"
+                    android:maxLines="1"
+                    android:background="@color/primary"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="01:30-02:30"
+                    android:background="@color/third"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="02:30-03:30"
+                    android:background="@color/third"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="50dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/llDays"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:text="MON"
+                        android:background="@color/third"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:text="TUE"
+                        android:background="@color/third"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:text="WED"
+                        android:background="@color/third"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:text="THU"
+                        android:background="@color/third"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:text="FRI"
+                        android:background="@color/third"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"/>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:text="SAT"
+                        android:background="@color/third"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvMonday"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvTuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvWednesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvThursday"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvFriday"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvSaturday"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvNoStudents"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="nothing to display"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAddTimeTable"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:tintMode="@color/white"
+                android:src="@drawable/ic_baseline_add_24"
+                android:layout_gravity="end|bottom"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</LinearLayout>

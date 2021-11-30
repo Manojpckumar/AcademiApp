@@ -13,6 +13,7 @@ import com.google.gson.JsonParser;
 import com.sysirohub.academicapp.Adapter.AllTeachersAdapter;
 import com.sysirohub.academicapp.BottomDialogue.ActionBottomSheetDialog;
 import com.sysirohub.academicapp.Model.Example;
+import com.sysirohub.academicapp.Model.ResponseCommon;
 import com.sysirohub.academicapp.Model.Teacher;
 import com.sysirohub.academicapp.Retrofit.APIClient;
 import com.sysirohub.academicapp.Retrofit.GetResult;
@@ -94,6 +95,24 @@ public class AllTeachers extends AppCompatActivity implements GetResult.MyListen
             }
 
 
+        } else if(callNo.equalsIgnoreCase("TeacherApproval"))
+        {
+            Gson gson = new Gson();
+            custPrograssbar.close();
+
+            ResponseCommon common = gson.fromJson(result.toString(),ResponseCommon.class);
+
+            if(common.getResult().equalsIgnoreCase("true"))
+            {
+                String CiD = "0";
+                getAllTeachersFromApi(CiD);
+                Toast.makeText(AllTeachers.this, common.getResponseMsg(), Toast.LENGTH_SHORT).show();
+
+            }else
+            {
+                Toast.makeText(AllTeachers.this, common.getResponseMsg(), Toast.LENGTH_SHORT).show();
+
+            }
         }
 
 
@@ -105,19 +124,18 @@ public class AllTeachers extends AppCompatActivity implements GetResult.MyListen
 
         if (chk.equalsIgnoreCase("APPROVE")) {
 
-//            ApproveTeacherStatus(teacherList.get(position).getId(),"1");
+            ApproveTeacherStatus(teacherList.get(position).getId(),"1");
 
-            Toast.makeText(this, "EDIT" + teacherList.get(position).getId(), Toast.LENGTH_SHORT).show();
 
         } else if(chk.equalsIgnoreCase("BLOCK"))
             {
 
-//            ApproveTeacherStatus(teacherList.get(position).getId(), "0");
+           ApproveTeacherStatus(teacherList.get(position).getId(), "0");
 
         }
         else if(chk.equalsIgnoreCase("ASSIGN"))
         {
-            ;
+
            ActionBottomSheetDialog openBottomSheet = ActionBottomSheetDialog.newInstance();
            openBottomSheet.setData(teacherList.get(position).getId());
            openBottomSheet.show(getSupportFragmentManager(),ActionBottomSheetDialog.TAG);
@@ -127,6 +145,24 @@ public class AllTeachers extends AppCompatActivity implements GetResult.MyListen
 
         }
 
+    }
+
+    private void ApproveTeacherStatus(String id, String s) {
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+
+            jsonObject.put("t_id", id);
+            jsonObject.put("status", s);
+
+            JsonParser jsonParser = new JsonParser();
+            Call<JsonObject> call = APIClient.getInterface().updateTeacherStatus((JsonObject) jsonParser.parse(jsonObject.toString()));
+            GetResult getResult = new GetResult();
+            getResult.setMyListener(this);
+            getResult.onNCHandle(call, "TeacherApproval");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:screenOrientation="landscape"
+            android:name=".AllTimeTable"
+            android:exported="false" />
+        <activity
+            android:name=".AddTimeTable"
+            android:exported="false" />
+        <activity
             android:name=".AllTeachers"
             android:exported="false" />
         <activity

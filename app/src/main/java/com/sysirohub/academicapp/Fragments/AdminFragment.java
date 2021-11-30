@@ -13,6 +13,7 @@ import com.sysirohub.academicapp.AllClasses;
 import com.sysirohub.academicapp.AllStudents;
 import com.sysirohub.academicapp.AllSubjects;
 import com.sysirohub.academicapp.AllTeachers;
+import com.sysirohub.academicapp.AllTimeTable;
 import com.sysirohub.academicapp.AttendanceView;
 import com.sysirohub.academicapp.R;
 import com.sysirohub.academicapp.databinding.FragmentAdminBinding;
@@ -124,6 +125,16 @@ public class AdminFragment extends Fragment {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getContext(), AllTeachers.class);
+                startActivity(intent);
+
+            }
+        });
+
+        binding.llTimeTable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getContext(), AllTimeTable.class);
                 startActivity(intent);
 
             }
