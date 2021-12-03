@@ -50,6 +50,10 @@ public class AddTimeTable extends AppCompatActivity implements GetResult.MyListe
     List<String> subjectNameList;
     List<String> subjectIDList;
 
+    List<AllSlot> sessionList;
+    List<String> sessionIDlist;
+    List<String> sessionTimeSlots;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +67,7 @@ public class AddTimeTable extends AppCompatActivity implements GetResult.MyListe
         custPrograssbar.progressCreate(this);
 
         getWeekDaysFromApi(weekDay);
+        getSessionTimes(weekDay);
 
         binding.spnClasses.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -150,22 +155,28 @@ public class AddTimeTable extends AppCompatActivity implements GetResult.MyListe
             @Override
             public void onClick(View v) {
 
-                String day,classID,subID,startTime,endTime;
-                int classPos,subjectPos,dayPos;
+                String day,classID,subID,startTime,endTime,session_slot;
+                int classPos,subjectPos,dayPos,sessionPos;
 
                 classPos = binding.spnClasses.getSelectedItemPosition();
                 subjectPos = binding.spnSubjects.getSelectedItemPosition();
                 dayPos = binding.spnDays.getSelectedItemPosition();
+                sessionPos = binding.spnSession.getSelectedItemPosition();
 
                 classID = classIdList.get(classPos);
                 subID = subjectIDList.get(subjectPos);
                 day = weekIDList.get(dayPos);
-                startTime = binding.edStartTime.getText().toString();
-                endTime = binding.edEndTime.getText().toString();
+                session_slot = sessionIDlist.get(sessionPos);
+
+//                startTime = binding.edStartTime.getText().toString();
+//                endTime = binding.edEndTime.getText().toString();
+
+                startTime = "0";
+                endTime = "0";
 
                 if( !startTime.equalsIgnoreCase("") && !endTime.equalsIgnoreCase(""))
                 {
-                    addTimeTableToAPI(classID,subID,day,startTime,endTime);
+                    addTimeTableToAPI(classID,subID,day,startTime,endTime,session_slot);
                 }
                 else
                 {
@@ -180,7 +191,25 @@ public class AddTimeTable extends AppCompatActivity implements GetResult.MyListe
 
     }
 
-    private void addTimeTableToAPI(String classID, String subID, String day, String startTime, String endTime) {
+    private void getSessionTimes(String slot_id) {
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+
+            jsonObject.put("slot_id", slot_id);
+
+            JsonParser jsonParser = new JsonParser();
+            Call<JsonObject> call = APIClient.getInterface().getSessionTimes((JsonObject) jsonParser.parse(jsonObject.toString()));
+            GetResult getResult = new GetResult();
+            getResult.setMyListener(this);
+            getResult.onNCHandle(call, "getAllTimeslots");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void addTimeTableToAPI(String classID, String subID, String day, String startTime, String endTime,String session_slot) {
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -190,6 +219,7 @@ public class AddTimeTable extends AppCompatActivity implements GetResult.MyListe
             jsonObject.put("subject_id", subID);
             jsonObject.put("start", startTime);
             jsonObject.put("end", endTime);
+            jsonObject.put("slot_id", session_slot);
 
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().AddTimetable((JsonObject) jsonParser.parse(jsonObject.toString()));
@@ -347,6 +377,51 @@ public class AddTimeTable extends AppCompatActivity implements GetResult.MyListe
 
 
         }
+        else if (callNo.equalsIgnoreCase("getAllTimeslots")) {
+
+            Gson gson = new Gson();
+
+            custPrograssbar.close();
+
+            Example example = gson.fromJson(result.toString(),Example.class);
+
+            if(example.getResultData().getAllSlots() != null)
+            {
+                sessionList = new ArrayList<>();
+                sessionIDlist = new ArrayList<>();
+                sessionTimeSlots = new ArrayList<>();
+
+                sessionList = example.getResultData().getAllSlots();
+
+                for(AllSlot subject : sessionList)
+                {
+                    sessionIDlist.add(subject.getSlotId());
+                    sessionTimeSlots.add(subject.getDisplayTime());
+                }
+
+                custPrograssbar.close();
+
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sessionTimeSlots);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                binding.spnSession.setAdapter(dataAdapter);
+
+            }
+            else
+            {
+                List<String> noClass = new ArrayList<>();
+
+                custPrograssbar.close();
+                noClass.add("No session times found");
+
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, noClass);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                binding.spnSession.setAdapter(dataAdapter);
+
+            }
+
+        }
+
+
 
     }
 

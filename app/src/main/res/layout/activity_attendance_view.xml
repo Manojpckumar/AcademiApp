@@ -9,6 +9,7 @@
     tools:context=".AttendanceView">
 
     <LinearLayout
+        android:visibility="gone"
         android:weightSum="3"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -102,14 +103,38 @@
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvAttendanceView"
-        android:layout_marginTop="10dp"
+    <com.sysirohub.academicapp.CustomViews.CustomMainHeading
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:text="Class Name"
+        android:layout_height="wrap_content"/>
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+           android:layout_width="match_parent"
+           android:paddingTop="10dp"
+           android:id="@+id/noStudents"
+           android:paddingBottom="10dp"
+           android:gravity="center"
+           android:text="No students found"
+           android:layout_height="match_parent"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rcvAttendanceView"
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
 
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+       </androidx.recyclerview.widget.RecyclerView>
+
+
+   </FrameLayout>
 
 </LinearLayout>

@@ -19,17 +19,20 @@
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_class.xml" value="0.24592391304347827" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_students.xml" value="0.24010416666666667" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_subject.xml" value="0.24139492753623187" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_tasks.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_add_time_table.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_classes.xml" value="0.24592391304347827" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_students.xml" value="0.24139492753623187" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_subjects.xml" value="0.24139492753623187" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_tasks.xml" value="0.22916666666666666" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_teachers.xml" value="0.2368659420289855" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_all_time_table.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_attendance_view.xml" value="0.24592391304347827" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_payment_page.xml" value="0.2" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/activity_registration.xml" value="0.264" />
-        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/attendance_card.xml" value="0.24592391304347827" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/attendance_card.xml" value="0.2" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/bottombar_tabs.xml" value="0.25416666666666665" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/class_card.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_admin.xml" value="0.264" />
@@ -37,6 +40,7 @@
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_teacher.xml" value="0.176" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/teacher_assign_bottom_dialogue.xml" value="0.2368659420289855" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/timetable_card.xml" value="0.22735507246376813" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/today_attendance_task_card.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/xml/bottombar_tabs.xml" value="0.25416666666666665" />
       </map>
     </option>

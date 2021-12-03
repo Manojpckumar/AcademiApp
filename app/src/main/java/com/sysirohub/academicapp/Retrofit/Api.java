@@ -60,6 +60,14 @@ public interface Api {
     @POST(APIClient.APPEND_URL + "getAssignedClassbysubT")
     Call<JsonObject> getSubjectsByClassTeacher(@Body JsonObject object);
 
+    @POST(APIClient.APPEND_URL + "getAllTimeslots")
+    Call<JsonObject> getSessionTimes(@Body JsonObject object);
+
+    @POST(APIClient.APPEND_URL + "ServerConfig")
+    Call<JsonObject> checkTime(@Body JsonObject object);
+
+    @POST(APIClient.APPEND_URL + "getAttendanceView")
+    Call<JsonObject> getAttendanceView(@Body JsonObject object);
 
 
 }

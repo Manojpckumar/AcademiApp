@@ -32,12 +32,14 @@
            <com.sysirohub.academicapp.CustomViews.CustomMainHeading
                android:text="Amar Nath"
                android:textStyle="bold"
+               android:id="@+id/tvStudName"
                android:textSize="20sp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"/>
 
            <com.sysirohub.academicapp.CustomViews.CustomSubHeading
                android:text="ID : 005236"
+               android:id="@+id/tvStudDes"
                android:textSize="20sp"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"/>
@@ -49,15 +51,24 @@
            android:layout_width="wrap_content"
            android:layout_height="match_parent">
 
-           <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-               android:background="@drawable/absent_round_shape"
-               android:layout_width="50dp"
-               android:textSize="20sp"
-               android:textColor="@color/white"
-               android:text="A"
-               android:gravity="center"
-               android:layout_gravity="center"
-               android:layout_height="50dp"/>
+           <Switch
+               android:id="@+id/tvAttendance"
+               android:paddingEnd="10dp"
+               android:text="Absent"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"/>
+
+<!--           <com.sysirohub.academicapp.CustomViews.CustomMainHeading-->
+<!--               android:id="@+id/tvAttendance"-->
+<!--               android:visibility="gone"-->
+<!--               android:background="@drawable/absent_round_shape"-->
+<!--               android:layout_width="50dp"-->
+<!--               android:textSize="20sp"-->
+<!--               android:textColor="@color/white"-->
+<!--               android:text="A"-->
+<!--               android:gravity="center"-->
+<!--               android:layout_gravity="center"-->
+<!--               android:layout_height="100dp"/>-->
 
        </LinearLayout>
 

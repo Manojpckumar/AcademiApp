@@ -53,17 +53,29 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
         View view = binding.getRoot();
         setContentView(view);
 
-        auth = FirebaseAuth.getInstance();
+        custPrograssbar = new CustPrograssbar();
+        custPrograssbar.progressCreate(this);
+
+
+        String checkTime = Common.getSystemTimeandDate();
+        String systemDate = Common.getSystemDate();
+        Log.d("checkPostTime00",checkTime);
+        Log.d("checkPostTime00",systemDate);
+        checkSystemTime(checkTime,systemDate);
+
+//        auth = FirebaseAuth.getInstance();
+//        custPrograssbar = new CustPrograssbar();
+//        mAuth = FirebaseAuth.getInstance();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//
+//        custPrograssbar.progressCreate(this);
+//        Log.d("currentEmail",currentUser.getEmail());
+//
+//        getUserAccountType(currentUser.getEmail());
+
+
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
 
-        custPrograssbar = new CustPrograssbar();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        custPrograssbar.progressCreate(this);
-        Log.d("currentEmail",currentUser.getEmail());
-
-        getUserAccountType(currentUser.getEmail());
 
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -88,6 +100,23 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
             }
         });
 
+    }
+
+    private void checkSystemTime(String time, String date) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+
+            jsonObject.put("tymzone", time);
+            jsonObject.put("date", date);
+
+            JsonParser jsonParser = new JsonParser();
+            Call<JsonObject> call = APIClient.getInterface().checkTime((JsonObject) jsonParser.parse(jsonObject.toString()));
+            GetResult getResult = new GetResult();
+            getResult.setMyListener(this);
+            getResult.onNCHandle(call, "ServerConfig");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public void getUserAccountType(String email) {
@@ -129,7 +158,6 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
         if(callNo.equalsIgnoreCase("getStatusbyemail")){
 
             Gson gson = new Gson();
-            custPrograssbar.close();
 
             Example example = gson.fromJson(result.toString(), Example.class);
 
@@ -141,6 +169,7 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
                 Common.adminID = example.getResultData().getUserDetails().getId();
 
                 String name = example.getResultData().getUserDetails().getName();
+                custPrograssbar.close();
                 loadFragment(new AdminFragment(name));
 
             }else if(accountType.equalsIgnoreCase("Teacher"))
@@ -149,6 +178,7 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
                 Common.teacherID = example.getResultData().getUserDetails().getId();
 
                 String name = example.getResultData().getUserDetails().getName();
+                custPrograssbar.close();
                 loadFragment(new TeacherFragment(name));
             }
             else
@@ -158,6 +188,48 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
 
 
         }
+        else if(callNo.equalsIgnoreCase("ServerConfig"))
+        {
 
+            Gson gson = new Gson();
+
+            Example example = gson.fromJson(result.toString(), Example.class);
+
+            String accountType = example.getResult();
+
+            if (accountType.equalsIgnoreCase("true"))
+            {
+                auth = FirebaseAuth.getInstance();
+                custPrograssbar = new CustPrograssbar();
+                mAuth = FirebaseAuth.getInstance();
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+
+                getUserAccountType(currentUser.getEmail());
+            }
+            else
+            {
+                Toast.makeText(HomeActivity.this, "Your clock is backward", Toast.LENGTH_SHORT).show();
+                startActivityForResult(new Intent(android.provider.Settings.ACTION_DATE_SETTINGS), 0);
+            }
+
+
+        }
+
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        String checkTime = Common.getSystemTimeandDate();
+        String systemDate = Common.getSystemDate();
+        checkSystemTime(checkTime,systemDate);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        String checkTime = Common.getSystemTimeandDate();
+        String systemDate = Common.getSystemDate();
+        checkSystemTime(checkTime,systemDate);
     }
 }

@@ -12,9 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:screenOrientation="landscape"
-            android:name=".AllTimeTable"
+            android:name=".AddTasks"
             android:exported="false" />
+        <activity
+            android:name=".AllTasks"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentPage"
+            android:exported="false" />
+        <activity
+            android:name=".AllTimeTable"
+            android:exported="false"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".AddTimeTable"
             android:exported="false" />

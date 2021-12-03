@@ -42,7 +42,7 @@ public class AllStudents extends AppCompatActivity implements GetResult.MyListen
     List<String> classIdList;
     List<String> classNameList;
 
-    String classId;
+    String classId,viewType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,9 +175,11 @@ public class AllStudents extends AppCompatActivity implements GetResult.MyListen
 
                 studentList = example.getResultData().getStudents();
 
+                viewType = "Students";
+
                 custPrograssbar.close();
                 binding.rcvAllStudents.setVisibility(View.VISIBLE);
-                AllStudentsAdapter adapter = new AllStudentsAdapter(AllStudents.this, studentList);
+                AllStudentsAdapter adapter = new AllStudentsAdapter(AllStudents.this, studentList,viewType);
                 binding.rcvAllStudents.setLayoutManager(new LinearLayoutManager(this));
                 binding.rcvAllStudents.setAdapter(adapter);
             }

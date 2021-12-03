@@ -2,6 +2,7 @@ package com.sysirohub.academicapp.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.sysirohub.academicapp.AllSlot;
 
 import java.util.List;
 
@@ -99,10 +100,10 @@ public class ResultData {
         this.allSubyclass = allSubyclass;
     }
 
-//    get all days
-@SerializedName("ActiveWeekdays")
-@Expose
-private List<ActiveWeekday> activeWeekdays = null;
+    //    get all days
+    @SerializedName("ActiveWeekdays")
+    @Expose
+    private List<ActiveWeekday> activeWeekdays = null;
 
     public List<ActiveWeekday> getActiveWeekdays() {
         return activeWeekdays;
@@ -188,6 +189,32 @@ private List<ActiveWeekday> activeWeekdays = null;
     }
 
 //    TimeTable end
+
+    //    session times
+    @SerializedName("AllSlots")
+    @Expose
+    private List<AllSlot> allSlots = null;
+
+    public List<AllSlot> getAllSlots() {
+        return allSlots;
+    }
+
+    public void setAllSlots(List<AllSlot> allSlots) {
+        this.allSlots = allSlots;
+    }
+
+    // attendanceview
+    @SerializedName("AttendanceView")
+    @Expose
+    private List<AttendanceView> attendanceView = null;
+
+    public List<AttendanceView> getAttendanceView() {
+        return attendanceView;
+    }
+
+    public void setAttendanceView(List<AttendanceView> attendanceView) {
+        this.attendanceView = attendanceView;
+    }
 
 
 }

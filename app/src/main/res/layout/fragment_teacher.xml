@@ -1,221 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.sysirohub.academicapp.Fragments.TeacherFragment">
 
     <LinearLayout
-        android:background="@drawable/home_top_card"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_top_card"
+        android:orientation="vertical">
 
         <com.sysirohub.academicapp.CustomViews.CustomTextView
-            android:layout_marginTop="15dp"
-            android:textColor="@color/black"
-            android:paddingBottom="20dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:text="Welcome..."
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:paddingBottom="20dp"
+            android:text="Welcome..."
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:paddingBottom="20dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp">
 
             <com.sysirohub.academicapp.CustomViews.CustomMainHeading
                 android:id="@+id/tvTeacherName"
-                android:gravity="center"
-                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:textSize="20sp"
+                android:gravity="center"
                 android:text="Teacher name here"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:padding="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/white"
-            android:background="@drawable/rounded_card"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-           <LinearLayout
-               android:weightSum="2"
-               android:orientation="horizontal"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-
-               <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                   android:text="Reminder"
-                   android:layout_weight="1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"/>
-
-               <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                   android:text="View Details >"
-                   android:gravity="end"
-                   android:layout_weight="1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"/>
-
-
-           </LinearLayout>
-
-            <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-                android:paddingTop="10dp"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:text="Teachers next task appear here"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <LinearLayout
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:weightSum="2"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:src="@drawable/ic_class"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-                        android:paddingStart="10dp"
-                        android:text="IX-A"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:src="@drawable/ic_clock"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <com.sysirohub.academicapp.CustomViews.CustomMainHeading
-                        android:paddingStart="10dp"
-                        android:text="10:00 AM"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            </LinearLayout>
-
+                android:textStyle="bold" />
 
         </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/rcvTodaysTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_card"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/noAttendanceView"
+                android:gravity="center"
+                android:text="nothing to display"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="130dp" />
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
 
 
     <LinearLayout
-        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="40dp"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:padding="10dp">
 
 
         <LinearLayout
-            android:weightSum="2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="2">
 
             <LinearLayout
                 android:id="@+id/llAllClasses"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:gravity="center_vertical"
-                android:background="@drawable/rounded_card"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_card"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_admin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_admin" />
 
                 <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:text="All Classes"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="All Classes"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
 
             <androidx.legacy.widget.Space
                 android:layout_width="10dp"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
             <LinearLayout
-                android:visibility="gone"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:gravity="center_vertical"
-                android:background="@drawable/rounded_card"
-                android:orientation="vertical"
+                android:id="@+id/llAllTasks"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_card"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp"
+                >
 
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_admin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_menu_book_24" />
 
                 <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textSize="18sp"
-                    android:text="All Teachers"
+                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="All Tasks"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -224,68 +153,68 @@
 
         <androidx.legacy.widget.Space
             android:layout_width="match_parent"
-            android:layout_height="15dp"/>
+            android:layout_height="15dp" />
 
         <LinearLayout
-            android:visibility="gone"
-            android:weightSum="2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:weightSum="2">
 
             <LinearLayout
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:gravity="center_vertical"
-                android:background="@drawable/rounded_card"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_card"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_admin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_admin" />
 
                 <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:text="All Teachers"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="All Teachers"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
 
             <androidx.legacy.widget.Space
                 android:layout_width="10dp"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
             <LinearLayout
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:gravity="center_vertical"
-                android:background="@drawable/rounded_card"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_card"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <ImageView
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_admin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_admin" />
 
                 <com.sysirohub.academicapp.CustomViews.CustomSubHeading
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textSize="18sp"
-                    android:text="All Teachers"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="All Teachers"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -294,9 +223,6 @@
 
 
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>
