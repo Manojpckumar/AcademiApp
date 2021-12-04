@@ -20,9 +20,22 @@ public class AttendanceView {
     @SerializedName("start")
     @Expose
     private String start;
+
     @SerializedName("end")
     @Expose
     private String end;
+
+    @SerializedName("slot_id")
+    @Expose
+    private String slot_id;
+
+    public String getSlot_id() {
+        return slot_id;
+    }
+
+    public void setSlot_id(String slot_id) {
+        this.slot_id = slot_id;
+    }
 
     public String getSubjectId() {
         return subjectId;

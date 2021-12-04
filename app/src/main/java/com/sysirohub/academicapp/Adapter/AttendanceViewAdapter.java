@@ -55,21 +55,20 @@ public class AttendanceViewAdapter extends RecyclerView.Adapter<AttendanceViewAd
         holder.tvSubject.setText(model.getSubjectName());
         holder.tvClass.setText(model.getClassName());
         holder.tvTime.setText(model.getStart()+ " - " +model.getEnd());
-
-
+        
         SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
 
 
 
-        try {
-            Date start = parser.parse(model.getStart());
-            Date end = parser.parse(model.getEnd());
-
-            Date userDate = Common.getSystem24Time();
-            if (userDate.after(start) && userDate.before(end))
-            {
-                holder.ll_mainCard.setClickable(true);
-//                Toast.makeText(context, "condition is true", Toast.LENGTH_LONG).show();
+//        try {
+//            Date start = parser.parse(model.getStart());
+//            Date end = parser.parse(model.getEnd());
+//
+//            Date userDate = Common.getSystem24Time();
+//            if (userDate.after(start) && userDate.before(end))
+//            {
+//                holder.ll_mainCard.setClickable(true);
+////                Toast.makeText(context, "condition is true", Toast.LENGTH_LONG).show();
 
                 holder.ll_mainCard.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -79,19 +78,21 @@ public class AttendanceViewAdapter extends RecyclerView.Adapter<AttendanceViewAd
 
                         Intent intent = new Intent(context, com.sysirohub.academicapp.AttendanceView.class);
                         intent.putExtra("classId",model.getClassId());
+                        intent.putExtra("className",model.getClassName());
+                        intent.putExtra("slot_id",model.getSlot_id());
                         context.startActivity(intent);
                     }
                 });
-            }
-            else
-            {
-                holder.ll_mainCard.setClickable(false);
-                holder.ll_mainCard.setBackgroundColor(context.getResources().getColor(R.color.ashlite));
-
-            }
-        } catch (ParseException e) {
-            // Invalid date was entered
-        }
+//            }
+//            else
+//            {
+//                holder.ll_mainCard.setClickable(false);
+//                holder.ll_mainCard.setBackgroundColor(context.getResources().getColor(R.color.ashlite));
+//
+//            }
+//        } catch (ParseException e) {
+//            // Invalid date was entered
+//        }
 
 
 

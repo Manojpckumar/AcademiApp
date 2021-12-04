@@ -25,9 +25,16 @@ public class AllStudentsAdapter extends RecyclerView.Adapter<AllStudentsAdapter.
     Context context;
     List<Student> studentsList;
     String viewTypess;
-    View view;
+    String slot_id;
 
-    public AllStudentsAdapter(Context context, List<Student> studentsList,String now) {
+    public AllStudentsAdapter(Context context, List<Student> studentsList, String viewTypess,  String slot_id) {
+        this.context = context;
+        this.studentsList = studentsList;
+        this.viewTypess = viewTypess;
+        this.slot_id = slot_id;
+    }
+
+    public AllStudentsAdapter(Context context, List<Student> studentsList, String now) {
         this.context = context;
         this.studentsList = studentsList;
         this.viewTypess = now;
@@ -76,6 +83,7 @@ public class AllStudentsAdapter extends RecyclerView.Adapter<AllStudentsAdapter.
                         if(isChecked)
                         {
                             holder.tvAttendance.setText("Present");
+
                         }
                         else
                         {

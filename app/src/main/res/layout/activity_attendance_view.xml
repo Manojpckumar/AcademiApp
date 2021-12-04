@@ -104,6 +104,7 @@
     </LinearLayout>
 
     <com.sysirohub.academicapp.CustomViews.CustomMainHeading
+        android:id="@+id/tvHeading"
         android:layout_width="match_parent"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"

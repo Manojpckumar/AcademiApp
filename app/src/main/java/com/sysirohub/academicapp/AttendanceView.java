@@ -26,7 +26,7 @@ import java.util.List;
 
 import retrofit2.Call;
 
-public class AttendanceView extends AppCompatActivity implements GetResult.MyListener {
+public class AttendanceView extends AppCompatActivity implements GetResult.MyListener,RecyclerViewClickInterface{
 
     ActivityAttendanceViewBinding binding;
     CustPrograssbar custPrograssbar;
@@ -42,7 +42,10 @@ public class AttendanceView extends AppCompatActivity implements GetResult.MyLis
         setContentView(view);
 
         String classid = getIntent().getStringExtra("classId");
+        String className = getIntent().getStringExtra("className");
 
+
+        binding.tvHeading.setText(className);
 
         custPrograssbar = new CustPrograssbar();
         custPrograssbar.progressCreate(this);
@@ -98,12 +101,20 @@ public class AttendanceView extends AppCompatActivity implements GetResult.MyLis
                 custPrograssbar.close();
                 binding.noStudents.setVisibility(View.GONE);
                 binding.rcvAttendanceView.setVisibility(View.VISIBLE);
-                AllStudentsAdapter adapter = new AllStudentsAdapter(AttendanceView.this, studentList,viewType);
+
+                String slot_id = getIntent().getStringExtra("slot_id");
+
+                AllStudentsAdapter adapter = new AllStudentsAdapter(AttendanceView.this, studentList,viewType,slot_id);
                 binding.rcvAttendanceView.setLayoutManager(new LinearLayoutManager(this));
                 binding.rcvAttendanceView.setAdapter(adapter);
             }
 
         }
+
+    }
+
+    @Override
+    public void onItemClick(int position, String chk) {
 
     }
 }

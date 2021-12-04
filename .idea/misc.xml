@@ -36,12 +36,17 @@
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/bottombar_tabs.xml" value="0.25416666666666665" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/class_card.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_admin.xml" value="0.264" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_admin_meeting.xml" value="0.22418478260869565" />
+        <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_join_meetings.xml" value="0.22418478260869565" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_parent_student.xml" value="0.25416666666666665" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/fragment_teacher.xml" value="0.176" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/teacher_assign_bottom_dialogue.xml" value="0.2368659420289855" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/timetable_card.xml" value="0.22735507246376813" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/layout/today_attendance_task_card.xml" value="0.264" />
         <entry key="..\:/FabProject/AcademicApp/app/src/main/res/xml/bottombar_tabs.xml" value="0.25416666666666665" />
+        <entry key="..\:/FabProject/AcademicApp/mobilertc/src/main/res/layout/activity_join.xml" value="0.22418478260869565" />
+        <entry key="..\:/FabProject/AcademicApp/mobilertc/src/main/res/layout/dialog_main.xml" value="0.22418478260869565" />
+        <entry key="..\:/FabProject/AcademicApp/mobilertc/src/main/res/layout/login_dialog.xml" value="0.22418478260869565" />
       </map>
     </option>
   </component>

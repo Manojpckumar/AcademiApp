@@ -19,6 +19,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.sysirohub.academicapp.Fragments.AdminFragment;
+import com.sysirohub.academicapp.Fragments.AdminMeeting;
+import com.sysirohub.academicapp.Fragments.JoinMeetings;
+import com.sysirohub.academicapp.Fragments.ParentStudentFragment;
 import com.sysirohub.academicapp.Fragments.TeacherFragment;
 import com.sysirohub.academicapp.Interface.OnFragmentInteractionListener;
 import com.roughike.bottombar.BottomBar;
@@ -81,6 +84,38 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
             @Override
             public void onTabSelected(@IdRes int tabId) {
 
+                if (tabId == R.id.tab_session) {
+
+                    if(Common.userRole.equalsIgnoreCase("Admin"))
+                    {
+//                        loadFragment(new AdminMeeting());
+//                        Intent intent = new Intent(HomeActivity.this,j.class);
+//                        startActivity(intent);
+                    }
+                    else
+                    {
+                        loadFragment(new JoinMeetings());
+                    }
+
+                }
+
+                if (tabId == R.id.tabDashboard) {
+
+                    if(Common.userRole.equalsIgnoreCase("Admin"))
+                    {
+                        loadFragment(new AdminFragment());
+                    }
+                    else if(Common.userRole.equalsIgnoreCase("Teacher"))
+                    {
+                        loadFragment(new TeacherFragment());
+                    }
+                    else
+                    {
+                        loadFragment(new ParentStudentFragment());
+                    }
+
+                }
+
                 if (tabId == R.id.tabSignOut) {
                     auth.signOut();
                     Common.setDefault();
@@ -93,9 +128,29 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
         bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
             @Override
             public void onTabReSelected(@IdRes int tabId) {
-                if (tabId == R.id.tab_favorites) {
-                    // The tab with id R.id.tab_favorites was reselected,
-                    // change your content accordingly.
+                if (tabId == R.id.tabDashboard) {
+                    if(Common.userRole.equalsIgnoreCase("Admin"))
+                    {
+                        loadFragment(new AdminFragment());
+                    }
+                    else if(Common.userRole.equalsIgnoreCase("Teacher"))
+                    {
+                        loadFragment(new TeacherFragment());
+                    }
+                    else
+                    {
+                        loadFragment(new ParentStudentFragment());
+                    }
+                } else if (tabId == R.id.tab_session) {
+                    if(Common.userRole.equalsIgnoreCase("Admin"))
+                    {
+                        loadFragment(new AdminMeeting());
+                    }
+                    else
+                    {
+                        loadFragment(new JoinMeetings());
+                    }
+
                 }
             }
         });
@@ -205,7 +260,7 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentInterac
                 FirebaseUser currentUser = mAuth.getCurrentUser();
 
                 getUserAccountType(currentUser.getEmail());
-            }
+              }
             else
             {
                 Toast.makeText(HomeActivity.this, "Your clock is backward", Toast.LENGTH_SHORT).show();
